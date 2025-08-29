@@ -91,5 +91,20 @@
       }
     }
   </script>
+  <script src="coupons.js"></script>
+<script>
+  function checkCoupon() {
+    const code = document.getElementById("couponInput").value.trim();
+    const result = document.getElementById("result");
+    
+    if (coupons[code]) {
+      result.innerHTML = "🎉 مبروك! " + coupons[code];
+      result.style.color = "#871813";
+    } else {
+      result.innerHTML = "❌ الكوبون غير صحيح";
+      result.style.color = "red";
+    }
+  }
+</script>
 </body>
 </html>
