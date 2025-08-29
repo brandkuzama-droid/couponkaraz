@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>كرزة - الكوبونات</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #871813;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 350px;
+    }
+    .logo {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+    input {
+      padding: 12px;
+      width: 90%;
+      border: 2px solid #871813;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      text-align: center;
+    }
+    button {
+      background-color: #871813;
+      color: #fff;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #a32020;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="logo.png" alt="شعار كرزة" class="logo">
+    <h1>🎁 أدخل الكوبون لمعرفة جائزتك 🎁</h1>
+    <input type="text" id="couponInput" placeholder="أدخل الكوبون">
+    <br>
+    <button onclick="checkCoupon()">تحقق</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function checkCoupon() {
+      const coupon = document.getElementById("couponInput").value.trim();
+      const result = document.getElementById("result");
+
+      // كوبونات وجوائز تجريبية
+      const prizes = {
+        "KARAZAH10": "خصم 10٪ 🎉",
+        "KARAZAH50": "قسيمة بقيمة 50 ريال 🎁",
+        "KARAZAH100": "قسيمة بقيمة 100 ريال 🏆"
+      };
+
+      if (prizes[coupon]) {
+        result.innerHTML = "مبروك! جائزتك: " + prizes[coupon];
+        result.style.color = "#871813";
+      } else {
+        result.innerHTML = "❌ الكوبون غير صحيح";
+        result.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
